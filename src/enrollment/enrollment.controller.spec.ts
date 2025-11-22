@@ -54,7 +54,7 @@ describe('EnrollmentController', () => {
 
     mockEnrollmentService.create.mockResolvedValue(created);
 
-    const response = await controller.create(dto);
+    const response = await controller.enrollStudent(dto);
 
     expect(service.create).toHaveBeenCalledWith(dto);
     expect(response).toEqual(created);
@@ -100,7 +100,7 @@ describe('EnrollmentController', () => {
   it('removeEnrollment should call delete and return no content', async () => {
     mockEnrollmentService.delete.mockResolvedValue(undefined);
 
-    const response = await controller.removeEnrollment(1);
+    const response = await controller.cancelEnrollment(1);
 
     expect(service.delete).toHaveBeenCalledWith(1);
     expect(response).toBeUndefined();

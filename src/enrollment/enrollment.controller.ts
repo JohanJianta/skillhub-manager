@@ -15,7 +15,7 @@ export class EnrollmentController {
   constructor(private readonly enrollmentService: EnrollmentService) {}
 
   @Post()
-  create(@Body() dto: CreateEnrollmentDto) {
+  enrollStudent(@Body() dto: CreateEnrollmentDto) {
     return this.enrollmentService.create(dto);
   }
 
@@ -31,7 +31,7 @@ export class EnrollmentController {
 
   @Delete('/:id')
   @HttpCode(204)
-  removeEnrollment(@Param('id') id: number) {
+  cancelEnrollment(@Param('id') id: number) {
     return this.enrollmentService.delete(id);
   }
 }

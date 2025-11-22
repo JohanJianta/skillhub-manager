@@ -90,7 +90,7 @@ describe('CourseController', () => {
 
     mockCourseService.create.mockResolvedValue(created);
 
-    const response = await controller.create(dto);
+    const response = await controller.addCourse(dto);
 
     expect(service.create).toHaveBeenCalledWith(dto);
     expect(response).toEqual(created);
@@ -111,7 +111,7 @@ describe('CourseController', () => {
 
     mockCourseService.update.mockResolvedValue(updated);
 
-    const response = await controller.update(1, dto);
+    const response = await controller.updateCourse(1, dto);
 
     expect(service.update).toHaveBeenCalledWith(1, dto);
     expect(response).toEqual(updated);

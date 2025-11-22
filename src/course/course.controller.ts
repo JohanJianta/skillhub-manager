@@ -27,12 +27,12 @@ export class CourseController {
   }
 
   @Post()
-  create(@Body() dto: CreateCourseDto) {
+  addCourse(@Body() dto: CreateCourseDto) {
     return this.courseService.create(dto);
   }
 
   @Put('/:id')
-  update(@Param('id') id: number, @Body() dto: UpdateCourseDto) {
+  updateCourse(@Param('id') id: number, @Body() dto: UpdateCourseDto) {
     return this.courseService.update(id, dto);
   }
 
