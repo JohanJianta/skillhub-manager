@@ -7,6 +7,7 @@ import {
 } from 'typeorm';
 import { Student } from '../student/student.entity';
 import { Course } from '../course/course.entity';
+import { Exclude } from 'class-transformer';
 
 @Entity({ name: 'enrollments' })
 export class Enrollment {
@@ -14,6 +15,7 @@ export class Enrollment {
   id: number;
 
   // FK to students
+  @Exclude()
   @Column({ type: 'int', nullable: false })
   student_id: number;
 
@@ -24,6 +26,7 @@ export class Enrollment {
   student: Student;
 
   // FK to courses
+  @Exclude()
   @Column({ type: 'int', nullable: false })
   course_id: number;
 

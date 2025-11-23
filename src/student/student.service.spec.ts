@@ -76,7 +76,7 @@ describe('StudentService', () => {
 
     expect(repo.findOne).toHaveBeenCalledWith({
       where: { id: 1, is_deleted: false },
-      relations: ['enrollments'],
+      relations: ['enrollments.course'],
     });
     expect(result).toEqual(student);
   });
